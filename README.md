@@ -127,7 +127,7 @@ Script R com análise estatística completa para decisão de irrigação:
 
 ## 🎥 Vídeo de Demonstração
 
-> Link do vídeo no YouTube: **[a ser adicionado]**
+> Link do vídeo no YouTube: **[Assistir no YouTube](https://youtu.be/bu4KfaP6pcw?feature=shared)**
 
 ---
 
