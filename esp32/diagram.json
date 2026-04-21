@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "author": "Sistema de Irrigação - Milho",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 250,
+      "left": 350,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnN",
+      "top": 50,
+      "left": 100,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnP",
+      "top": 50,
+      "left": 220,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btnK",
+      "top": 50,
+      "left": 340,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr",
+      "top": 50,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-dht22",
+      "id": "dht22",
+      "top": 50,
+      "left": 650,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-relay-module",
+      "id": "relay",
+      "top": 450,
+      "left": 350,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "btnN:2.r", "red", ["v-20","h-270"]],
+    ["btnN:1.r", "esp:GND.1", "black", ["v20","h20"]],
+    ["btnN:1.l", "esp:GPIO22", "green", ["v10","h10"]],
+
+    ["esp:3V3", "btnP:2.r", "red", ["v-20","h-150"]],
+    ["btnP:1.r", "esp:GND.1", "black", ["v20","h20"]],
+    ["btnP:1.l", "esp:GPIO21", "green", ["v10","h10"]],
+
+    ["esp:3V3", "btnK:2.r", "red", ["v-20","h-30"]],
+    ["btnK:1.r", "esp:GND.1", "black", ["v20","h20"]],
+    ["btnK:1.l", "esp:GPIO19", "green", ["v10","h10"]],
+
+    ["esp:3V3", "ldr:VCC", "red", ["v-20","h100"]],
+    ["ldr:GND", "esp:GND.2", "black", ["v20","h-100"]],
+    ["ldr:AO", "esp:GPIO34", "yellow", ["v10","h-50"]],
+
+    ["esp:5V", "dht22:VCC", "red", ["v-30","h250"]],
+    ["dht22:GND", "esp:GND.2", "black", ["v30","h-200"]],
+    ["dht22:SDA", "esp:GPIO23", "yellow", ["v10","h-100"]],
+
+    ["esp:5V", "relay:VCC", "red", ["v100","h0"]],
+    ["relay:GND", "esp:GND.1", "black", ["v-20","h0"]],
+    ["esp:GPIO18", "relay:IN", "blue", ["v80","h0"]]
+  ]
+}
